@@ -1,9 +1,9 @@
 #=================================[=]  Informasi Situs
 
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://masputrawae.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 title: "MasPutraWae" # the name of your site, e.g. ACME Corp.
-baseurl: "" # the subpath of your site, e.g. /blog
-lang: ""
+baseurl: "/my-notes" # the subpath of your site, e.g. /blog
+lang: "id"
 description: >- # ini berarti untuk mengabaikan baris baru sampai "baseurl:"
   Tulis deskripsi luar biasa untuk situs baru Anda di sini. Anda dapat mengedit
   baris ini di _config.yml. Ini akan muncul di meta kepala dokumen Anda (untuk
@@ -13,10 +13,15 @@ keywords: "blog, fikiran, renungan, Putra Jaya"  # Kata kunci untuk SE
 email: masputrawae.official@gmail.com
 owner: "Putra Jaya"
 
+#=================================[=]  Github Repo
+github:
+  repository_url: https://github.com/masputrawae/my-notes
+  site_root: /
+git_branch: "master"
 #=================================[=]  Social Link
 
-github: "https://github.com/masputrawae"
-github-name: ""
+github_link: "https://github.com/masputrawae"
+github-name: "masputrawae"
 
 twitter: "https://x.com/Masputrawae"
 twitter-name: ""
@@ -66,9 +71,3 @@ exclude:  # Daftar file dan direktori yang diabaikan dalam proses build
   - drafts  # Folder drafts diabaikan dari build
   - .sass-cache/
   - .jekyll-cache/
-
-
-github:
-  repository_url: https://github.com/masputrawae/my-notes
-  site_root: /
-git_branch: "master"

@@ -1,0 +1,166 @@
+---
+layout: page
+title: Text Editor
+permalink: /text-editor.html
+---
+<div class="markdown-editor">
+    <h1>Markdown Editor</h1>
+    
+    <h2>Front Matter</h2>
+    <label for="title">Judul:</label><br>
+    <input type="text" id="title" class="editor-input" placeholder="Masukkan judul" required><br>
+    
+    <label for="date">Tanggal (YYYY-MM-DD):</label><br>
+    <input type="date" id="date" class="editor-input" value="2024-08-27" required><br>
+    
+    <label for="categories">Kategori (pisahkan dengan koma):</label><br>
+    <input type="text" id="categories" class="editor-input" placeholder="Kategori 1, Kategori 2"><br>
+    
+    <label for="tags">Tags (pisahkan dengan koma):</label><br>
+    <input type="text" id="tags" class="editor-input" placeholder="Tag 1, Tag 2"><br>
+    
+    <label for="excerpt">Excerpt:</label><br>
+    <input type="text" id="excerpt" class="editor-input" placeholder="Masukkan excerpt"><br>
+    
+    <label for="status">Status:</label><br>
+    <select id="status" class="editor-input">
+        <option value="published">Published</option>
+        <option value="draft">Draft</option>
+    </select><br>
+    
+    <label for="post">Post (true/false):</label><br>
+    <select id="post" class="editor-input">
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select><br>
+    
+    <label for="description">Deskripsi:</label><br>
+    <input type="text" id="description" class="editor-input" placeholder="Masukkan deskripsi"><br>
+    
+    <label for="keywords">Keywords (pisahkan dengan koma):</label><br>
+    <input type="text" id="keywords" class="editor-input" placeholder="Kata kunci 1, Kata kunci 2"><br>
+    
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" class="editor-input" placeholder="Nama penulis"><br>
+    
+    <label for="last_modified_at">Last Modified At (YYYY-MM-DD):</label><br>
+    <input type="date" id="last_modified_at" class="editor-input" value="2024-10-31"><br>
+    
+    <h2>Konten Markdown</h2>
+    <textarea id="markdown" class="editor-textarea" rows="10" cols="50" placeholder="Tulis Markdown di sini..."></textarea><br>
+    
+    <a href="#" id="save-button" class="editor-button">Simpan ke GitHub</a>
+
+    <script>
+        document.getElementById('save-button').addEventListener('click', function() {
+            const title = document.getElementById('title').value;
+            const date = document.getElementById('date').value;
+            const categories = document.getElementById('categories').value.split(',').map(cat => cat.trim()).filter(cat => cat);
+            const tags = document.getElementById('tags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
+            const excerpt = document.getElementById('excerpt').value;
+            const status = document.getElementById('status').value;
+            const post = document.getElementById('post').value;
+            const description = document.getElementById('description').value;
+            const keywords = document.getElementById('keywords').value.split(',').map(key => key.trim()).filter(key => key);
+            const author = document.getElementById('author').value;
+            const last_modified_at = document.getElementById('last_modified_at').value;
+            const markdownText = document.getElementById('markdown').value;
+
+            const fileName = prompt("Masukkan nama file (misal: my-post.md):", "my-post.md");
+
+            if (fileName) {
+                const frontMatter = `---\n` +
+                    `layout: post\n` +
+                    `title: ${title}\n` +
+                    `date: ${date}\n` +
+                    `categories:\n` +
+                    categories.map(cat => `  - ${cat}`).join('\n') + '\n' +
+                    `tags:\n` +
+                    tags.map(tag => `  - ${tag}`).join('\n') + '\n' +
+                    `excerpt: ${excerpt}\n` +
+                    `status: ${status}\n` +
+                    `post: ${post}\n` +
+                    `description: ${description}\n` +
+                    `keywords: ${keywords.join(', ')}\n` +
+                    `author: ${author}\n` +
+                    `last_modified_at: ${last_modified_at}\n` +
+                    `---\n`;
+
+                const fullText = frontMatter + markdownText;
+
+                // Ganti dengan username GitHub Anda
+                const GITHUB_USERNAME = 'masputrawae'; // Username GitHub kamu
+                // Ganti dengan nama repositori Anda
+                const GITHUB_REPO = 'my-notes'; // Nama repositori kamu
+                // Path direktori di mana file akan disimpan
+                const GITHUB_PATH = '_posts'; // Path direktori
+
+                // Membuat URL untuk halaman pembuatan file di GitHub
+                const githubUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/new/master/${GITHUB_PATH}/${fileName}?value=${encodeURIComponent(fullText)}`;
+
+                // Mengarahkan pengguna ke URL
+                window.open(githubUrl, '_blank');
+            } else {
+                alert('Nama file tidak boleh kosong!');
+            }
+        });
+    </script>
+</div>
+<style>
+.markdown-editor {
+    max-width: 800px; /* Lebar maksimum untuk editor */
+    margin: 20px auto; /* Pusatkan editor di tengah */
+    padding: 20px; /* Padding untuk ruang di dalam editor */
+    border: 1px solid #ddd; /* Batas luar editor */
+    border-radius: 8px; /* Sudut yang membulat */
+    background-color: #f9f9f9; /* Warna latar belakang */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.577); /* Bayangan halus */
+}
+
+.markdown-editor h1,
+.markdown-editor h2 {
+    color: #0a0a0a; /* Warna judul */
+}
+
+.markdown-editor label {
+    display: block; /* Membuat label menjadi blok */
+    margin-bottom: 5px; /* Jarak bawah */
+    font-weight: bold; /* Menebalkan teks label */
+}
+
+.markdown-editor .editor-input,
+.markdown-editor .editor-textarea,
+.markdown-editor .editor-button {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Padding di dalam input */
+    margin-bottom: 15px; /* Jarak bawah */
+    border: 1px solid #ddd; /* Batas input */
+    border-radius: 4px; /* Sudut membulat */
+    box-sizing: border-box; /* Mengatur ukuran box */
+}
+
+.markdown-editor .editor-input:focus,
+.markdown-editor .editor-textarea:focus {
+    border-color: #000000; /* Batas saat fokus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+.markdown-editor .editor-textarea {
+    resize: vertical; /* Hanya bisa mengubah ukuran secara vertikal */
+}
+
+.markdown-editor .editor-button {
+    display: inline-block; /* Mengubah tombol menjadi blok inline */
+    text-align: center; /* Pusatkan teks */
+    background-color: #0d9eff; /* Warna latar belakang tombol */
+    color: rgb(0, 0, 0); /* Warna teks tombol */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border-radius: 4px; /* Sudut membulat tombol */
+    cursor: pointer; /* Ubah kursor saat hover */
+}
+
+.markdown-editor .editor-button:hover {
+    background-color: #0084ff; /* Warna tombol saat hover */
+}
+
+</style>
