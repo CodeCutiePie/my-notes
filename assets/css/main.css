@@ -176,3 +176,59 @@ summary {
 details:hover {
     background-color: #E8E8E8; /* Warna latar belakang lebih gelap saat hover */
 }
+/*=======================[>] Markdown Editor */
+.markdown-editor {
+    max-width: 800px; /* Lebar maksimum untuk editor */
+    margin: 20px auto; /* Pusatkan editor di tengah */
+    padding: 20px; /* Padding untuk ruang di dalam editor */
+    border: 1px solid #ddd; /* Batas luar editor */
+    border-radius: 8px; /* Sudut yang membulat */
+    background-color: #f9f9f9; /* Warna latar belakang */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.577); /* Bayangan halus */
+}
+
+.markdown-editor h1,
+.markdown-editor h2 {
+    color: #0a0a0a; /* Warna judul */
+}
+
+.markdown-editor label {
+    display: block; /* Membuat label menjadi blok */
+    margin-bottom: 5px; /* Jarak bawah */
+    font-weight: bold; /* Menebalkan teks label */
+}
+
+.markdown-editor .editor-input,
+.markdown-editor .editor-textarea,
+.markdown-editor .editor-button {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Padding di dalam input */
+    margin-bottom: 15px; /* Jarak bawah */
+    border: 1px solid #ddd; /* Batas input */
+    border-radius: 4px; /* Sudut membulat */
+    box-sizing: border-box; /* Mengatur ukuran box */
+}
+
+.markdown-editor .editor-input:focus,
+.markdown-editor .editor-textarea:focus {
+    border-color: #000000; /* Batas saat fokus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+.markdown-editor .editor-textarea {
+    resize: vertical; /* Hanya bisa mengubah ukuran secara vertikal */
+}
+
+.markdown-editor .editor-button {
+    display: inline-block; /* Mengubah tombol menjadi blok inline */
+    text-align: center; /* Pusatkan teks */
+    background-color: #0d9eff; /* Warna latar belakang tombol */
+    color: rgb(0, 0, 0); /* Warna teks tombol */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border-radius: 4px; /* Sudut membulat tombol */
+    cursor: pointer; /* Ubah kursor saat hover */
+}
+
+.markdown-editor .editor-button:hover {
+    background-color: #0084ff; /* Warna tombol saat hover */
+}
