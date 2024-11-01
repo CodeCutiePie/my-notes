@@ -1,0 +1,113 @@
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Satu kolom untuk layout yang bersih */
+    gap: 1.5rem; /* Jarak antar elemen grid */
+    padding: 1.5rem; /* Ruang di dalam grid */
+    margin: 0 auto; /* Pusatkan grid */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Font bersih yang mirip Wikipedia */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+    color: #333; /* Warna teks umum */
+}
+
+.main-grid h1,
+.main-grid h2,
+.main-grid h3 {
+    color: #003366; /* Warna judul yang lebih lembut dan netral */
+    margin: 0.5rem 0; /* Margin atas dan bawah */
+    font-weight: bold; /* Membuat judul lebih menonjol */
+}
+
+.main-grid h1 {
+    font-size: 2em; /* Ukuran font untuk h1 */
+    border-bottom: 2px solid #003366; /* Garis bawah untuk h1 */
+    padding-bottom: 0.5rem; /* Ruang bawah */
+}
+
+.main-grid h2 {
+    font-size: 1.5em; /* Ukuran font untuk h2 */
+}
+
+.main-grid h3 {
+    font-size: 1.2em; /* Ukuran font untuk h3 */
+}
+
+.main-grid p {
+    margin: 0.5rem 0; /* Margin atas dan bawah */
+}
+
+.main-grid ul,
+.main-grid ol {
+    margin: 20px;
+    padding-left: 1.5rem; /* Ruang kiri untuk list */
+}
+
+.main-grid li {
+    margin-bottom: 0.25rem; /* Ruang antara item list */
+}
+
+.main-grid a {
+    color: #0056b3; /* Warna tautan yang lebih lembut */
+    text-decoration: none; /* Tanpa garis bawah */
+}
+
+.main-grid a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #003366; /* Warna tautan saat hover */
+}
+
+.main-grid img {
+    max-width: 100%; /* Gambar responsif */
+    height: auto; /* Jaga rasio aspek */
+    margin: 1rem 0; /* Ruang atas dan bawah */
+    border-radius: 4px; /* Sudut gambar yang melengkung */
+}
+
+.main-grid blockquote {
+    padding: 1rem; /* Ruang dalam */
+    border-left: 4px solid #0056b3; /* Garis samping */
+    color: #666; /* Warna teks quote */
+    background-color: #f9f9f9; /* Latar belakang */
+    margin: 1rem 0; /* Margin atas dan bawah */
+    font-style: italic; /* Membuat teks italic */
+}
+
+.main-grid hr {
+    border: none; /* Menghapus border default */
+    border-top: 1px solid #ccc; /* Garis pemisah */
+    margin: 1.5rem 0; /* Margin atas dan bawah */
+}
+
+/* Styling untuk tabel */
+.main-grid table {
+    width: 100%; /* Lebar penuh */
+    border-collapse: collapse; /* Menghapus jarak antara sel */
+    margin: 1.5rem 0; /* Ruang atas dan bawah */
+}
+
+.main-grid th,
+.main-grid td {
+    border: 1px solid #ccc; /* Border sel */
+    padding: 0.5rem; /* Ruang dalam sel */
+    text-align: left; /* Rata kiri teks */
+}
+
+.main-grid th {
+    background-color: #f2f2f2; /* Latar belakang untuk header tabel */
+    font-weight: bold; /* Membuat teks header lebih menonjol */
+}
+
+/* Styling untuk kode */
+.main-grid pre,
+.main-grid code {
+    background-color: #f9f9f9; /* Latar belakang untuk kode */
+    border: 1px solid #ccc; /* Border untuk kode */
+    border-radius: 4px; /* Sudut melengkung */
+    padding: 0.5rem; /* Ruang dalam */
+    overflow-x: auto; /* Scroll horizontal untuk kode panjang */
+    font-family: 'Courier New', Courier, monospace; /* Font monospace untuk kode */
+}
+
+.main-grid pre {
+    white-space: pre-wrap; /* Membungkus teks dalam pre */
+    margin: 1rem 0; /* Margin atas dan bawah */
+}

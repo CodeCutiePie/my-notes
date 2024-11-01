@@ -1,6 +1,6 @@
-<h2>Categories List</h2>
 {% assign all_categories = "" %}
 
+<!-- Mengumpulkan semua kategori -->
 {% for post in site.posts %}
     {% for category in post.categories %}
         {% unless all_categories contains category %}
@@ -9,8 +9,9 @@
     {% endfor %}
 {% endfor %}
 
-{% assign categories_array = all_categories | split: "," | uniq %}
+{% assign categories_array = all_categories | split: "," | uniq | sort %} <!-- Mengurutkan kategori -->
 
+<!-- Menampilkan kategori dalam urutan abjad -->
 {% for category in categories_array %}
     <details>
         <summary>{{ category }}</summary>
@@ -21,4 +22,4 @@
             {% endfor %}
         </ul>
     </details>
-{% endfor %} 
+{% endfor %}

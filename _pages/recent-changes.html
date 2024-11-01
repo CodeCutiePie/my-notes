@@ -1,0 +1,15 @@
+---
+layout: page
+title: Recent Changes
+permalink: /recent-changes.html
+---
+<ul>
+  {% for post in site.posts %}
+    {% if forloop.index <= 10 %}  <!-- Menampilkan 5 artikel terbaru -->
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | xml_escape }}</a>
+        <span>{{ post.date | date: "%d %B %Y" }}</span> <!-- Tanggal publikasi -->
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

@@ -2,14 +2,68 @@
 layout: main
 ---
 
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-{% if page.author or site.author %}
-<p class="view">by {{ page.author | default: site.author }}</p>
-{% endif %}
+<div class="post-content">
+  <!-- Artikel Ter-render -->
+  <div id="rendered-content">
+      {{ content }}
+  </div>
 
-{{content}}
+  <!-- Markdown Source (Tersembunyi secara default) -->
+  <div id="markdown-source" style="display: none;">
+      <pre>
+---
+title: {{ page.title }}
+date: {{ page.date }}
+layout: {{ page.layout }}
+categories: {{ page.categories }}
+tags: {{ page.tags }}
+layout: {{ page.layout }}
+title: {{ page.title }}
+date: {{ page.date }}
+categories:
+{% for category in page.categories %}
+  - {{ category }}
+{% endfor %}
+tags:
+{% for tag in page.tags %}
+  - {{ tag }}
+{% endfor %}
+excerpt: {{ page.excerpt }}
+post: {{ page.post }}
+---
 
+{{ content | escape }}
+      </pre>
+  </div>
+</div>
 
-{% if page.tags.size > 0 %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endif %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const renderedContent = document.getElementById("rendered-content");
+      const markdownSource = document.getElementById("markdown-source");
+  
+      // Tampilkan konten ter-render secara default
+      renderedContent.style.display = "block";
+      markdownSource.style.display = "none";
+  
+      // Tambahkan event listener pada tombol Read
+      document.getElementById("view-rendered-link").addEventListener("click", function (event) {
+          event.preventDefault();
+          renderedContent.style.display = "block";
+          markdownSource.style.display = "none";
+      });
+  
+      // Tambahkan event listener pada tombol Source
+      document.getElementById("view-markdown-link").addEventListener("click", function (event) {
+          event.preventDefault();
+          renderedContent.style.display = "none";
+          markdownSource.style.display = "block";
+      });
+  });
+  </script>
+
+<style>
+#markdown-source pre {
+    white-space: pre-wrap; /* Membungkus teks agar sesuai lebar container */
+}
+</style>

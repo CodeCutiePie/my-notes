@@ -3,7 +3,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 12px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;    
 }
 
 /*=======================[>] Kontainer utama */
@@ -13,85 +14,142 @@
     grid:
         "left-side-grid header-grid header-grid" auto
         "left-side-grid main-grid right-side-grid" 1fr
-        "left-side-grid footer-grid footer-grid" auto
-        / auto 1fr auto; /* Menentukan lebar kolom */
-    gap: 8px; /* Jarak antar elemen grid */
-    height: 100vh; /* Mengisi seluruh tinggi layar */
+        "footer-grid footer-grid footer-grid" auto
+        / 10% 70% 20%; /* Menentukan lebar kolom */
 }
 
-/*=======================[>] Area Grid */
-.header-grid {
-    grid-area: header-grid; /* Menetapkan area grid untuk header */
-}
+.header-grid { grid-area: header-grid; }
+.left-side-grid { grid-area: left-side-grid; }
+.main-grid { grid-area: main-grid; }
+.right-side-grid { grid-area: right-side-grid; }
+.footer-grid { grid-area: footer-grid; }
 
-.left-side-grid {
-    grid-area: left-side-grid; /* Menetapkan area grid untuk sidebar kiri */
-    background-color: #B03A2E; /* Ganti dengan warna sesuai palet */
-    color: #FFFFFF; /* Warna teks */
-    padding: 10px;
-}
-
-.main-grid {
-    grid-area: main-grid; /* Menetapkan area grid untuk konten utama */
-    background-color: #FFFFFF; /* Warna latar belakang konten utama */
-    color: #000000; /* Warna teks */
-    padding: 10px;
-}
-
-.right-side-grid {
-    grid-area: right-side-grid; /* Menetapkan area grid untuk sidebar kanan */
-    background-color: #F1C40F; /* Ganti dengan warna sesuai palet */
-    padding: 10px;
-}
-
+.header-grid,
+.left-side-grid,
+.main-grid,
+.right-side-grid,
 .footer-grid {
-    grid-area: footer-grid; /* Menetapkan area grid untuk footer */
-    background-color: #001F3F; /* Ganti dengan warna sesuai palet */
-    color: #FFFFFF; /* Warna teks */
-    padding: 10px;
+    border: 1px solid #003366; /* Ganti border menjadi warna merah marun */
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px; /* Tambahkan border-radius untuk sudut yang lebih halus */
 }
 
 /*=======================[>] Header */
-.header-grid {
-    display: flex; /* Menggunakan flexbox untuk menyusun item di dalam header */
-    justify-content: space-between; /* Menyebar item secara merata */
-    align-items: center; /* Menyelaraskan item secara vertikal */
-    padding: 10px;
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-flex ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.header-nav li,
+.header-link li {
+    margin-right: 15px;
+}
+.header-flex a {
+    color: #2e55b0; /* Ganti warna tautan header menjadi merah marun */
+    text-decoration: none; /* Hapus garis bawah */
+    transition: color 0.3s ease; /* Tambahkan efek transisi */
+}
+.header-flex a:hover {
+    color: #0f8bf1; /* Warna emas saat hover */
+}
+/*=======================[>] Styling Form Pencarian */
+label {
+    margin-right: 10px; /* Menambahkan jarak antara label dan input */
+    color: #001F3F; /* Warna navy untuk teks label */
 }
 
-/* Navigasi dalam header */
-.header-nav,
-.header-link {
-    display: flex; /* Menyusun navigasi secara horizontal */
+input[type="text"] {
+    flex-grow: 1; /* Input akan mengisi sisa ruang yang tersedia */
+    padding: 5px; /* Padding di dalam input */
+    border: 1px solid #4fa0d2; /* Border merah marun untuk input */
+    border-radius: 4px; /* Border radius untuk sudut yang lebih halus */
+    font-size: 12px; /* Ukuran font di dalam input */
 }
 
-.header-nav ul,
-.header-link ul {
-    list-style: none; /* Menghilangkan bullet */
+input[type="text"]:focus {
+    border-color: #0fdef1; /* Warna emas saat input difokuskan */
+    outline: none; /* Menghapus outline default */
 }
 
-/* Search Bar */
-.header-search-bar {
-    flex: 1; /* Membuat kolom pencarian menggunakan ruang yang tersisa */
-    margin: 0 10px;
+input[type="submit"] {
+    background-color: #2e78b0; /* Latar belakang merah marun untuk tombol */
+    color: #FFFFFF; /* Warna teks putih untuk tombol */
+    border: none; /* Menghapus border default */
+    border-radius: 4px; /* Border radius untuk sudut yang lebih halus */
+    padding: 5px 10px; /* Padding di dalam tombol */
+    cursor: pointer; /* Menampilkan pointer saat hover */
+    transition: background-color 0.3s ease; /* Transisi untuk efek hover */
 }
 
-.header-search-bar input {
-    width: 100%; /* Mengisi lebar penuh */
+input[type="submit"]:hover {
+    background-color: #F1C40F; /* Warna emas saat hover */
+}
+
+/*=======================[>] Left Side */
+.left-side-flex { text-align: center; }
+.left-side-flex .logo {
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid skyblue;
+}
+.left-side-flex ul {
+    list-style-type: none;
+}
+.left-side-flex h2 {
+    margin-top: 20px;
+    color: #001F3F; /* Warna navy untuk judul */
+}
+.left-side-flex a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #001F3F; /* Warna navy untuk tautan */
+}
+
+/*=======================[>] Main */
+.main-grid {
+    padding: 30px;
+    background-color: #FFFFFF; /* Warna latar belakang putih untuk area utama */
+    border-radius: 8px; /* Tambahkan border-radius */
+}
+
+/*=======================[>] Right Side */
+.right-side-grid {
+    padding: 5%;
+}
+
+/* Styling list dalam TOC */
+.right-side-grid ul {
+    list-style: none;
+}
+
+/* Styling link TOC */
+.right-side-grid a {
+    color: #001F3F; /* Warna navy untuk tautan */
+    text-decoration: none;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    display: block;
     padding: 5px;
+    border-radius: 5px;
+}
+.right-side-grid a:hover {
+    color: #193895; /* Warna hijau saat hover */
+    font-weight: bold;
+    background-color: #F9F9F9; /* Latar belakang abu-abu saat hover */
 }
 
-/*=======================[>] Sidebar Kiri */
-.left-side-nav h2 {
-    margin-bottom: 5px; /* Jarak bawah pada judul */
+/* Sub-section styling */
+.right-side-grid li ul {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid rgb(0, 0, 0);
 }
-
-.left-side-nav ul {
-    list-style: none; /* Menghilangkan bullet */
-    margin-bottom: 10px; /* Jarak bawah antar kategori */
-}
-
-/*=======================[>] Konten Utama */
-.main-content {
-    /* Mungkin bisa ditambahkan style untuk konten utama */
+/*=======================[>] Footer */
+footer p{
+    text-align: center;
 }

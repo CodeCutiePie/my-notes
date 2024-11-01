@@ -10,24 +10,24 @@ description: >- # ini berarti untuk mengabaikan baris baru sampai "baseurl:"
   hasil pencarian Google) dan dalam deskripsi situs feed.xml Anda.
 site-desc: "Tempat berbagi keluh kesah" #deskripsi yang akan muncul di situs
 keywords: "blog, fikiran, renungan, Putra Jaya"  # Kata kunci untuk SE
-email: email-anda@example.com
-owner: "Your Name"
+email: masputrawae.official@gmail.com
+owner: "Putra Jaya"
 
 #=================================[=]  Social Link
 
-github: ""
+github: "https://github.com/masputrawae"
 github-name: ""
 
-twitter: ""
+twitter: "https://x.com/Masputrawae"
 twitter-name: ""
 
-facebook: ""
+facebook: "https://www.facebook.com/profile.php?id=61566134978045"
 facebook-name: ""
 
-instagram: ""
+instagram: "https://www.instagram.com/masputrawae_/"
 instagram-name: ""
 
-discord: ""
+discord: "https://discord.gg/nM4EP8DJFZ"
 discord-name: ""
 
 #=================================[=]  Basic Setting
