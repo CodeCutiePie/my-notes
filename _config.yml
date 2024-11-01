@@ -1,0 +1,68 @@
+#=================================[=]  Informasi Situs
+
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+title: "MasPutraWae" # the name of your site, e.g. ACME Corp.
+baseurl: "" # the subpath of your site, e.g. /blog
+lang: ""
+description: >- # ini berarti untuk mengabaikan baris baru sampai "baseurl:"
+  Tulis deskripsi luar biasa untuk situs baru Anda di sini. Anda dapat mengedit
+  baris ini di _config.yml. Ini akan muncul di meta kepala dokumen Anda (untuk
+  hasil pencarian Google) dan dalam deskripsi situs feed.xml Anda.
+site-desc: "Tempat berbagi keluh kesah" #deskripsi yang akan muncul di situs
+keywords: "blog, fikiran, renungan, Putra Jaya"  # Kata kunci untuk SE
+email: email-anda@example.com
+owner: "Your Name"
+
+#=================================[=]  Social Link
+
+github: ""
+github-name: ""
+
+twitter: ""
+twitter-name: ""
+
+facebook: ""
+facebook-name: ""
+
+instagram: ""
+instagram-name: ""
+
+discord: ""
+discord-name: ""
+
+#=================================[=]  Basic Setting
+paginate: 10  # Banyaknya postingan yang ditampilkan per halaman
+paginate_path: "/page:num/"  # Jalur URL untuk paginasi halaman
+#=================================[=]  Direktori
+collections:  # Mengonfigurasi koleksi konten
+  pages:
+    output: true  # Menentukan apakah halaman dalam koleksi ini akan diproses
+  tabs:
+    output: true  # Menentukan apakah tab akan diproses
+    sort_by: order  # Mengurutkan tab berdasarkan properti 'order'
+
+#=================================[=]  Default 
+defaults:  # Pengaturan default untuk jenis konten tertentu
+  - scope:
+      path: ""  # Jalur konten yang berlaku untuk pengaturan ini
+      type: "posts"  # Jenis konten yang berlaku
+    values:
+      layout: "post"  # Layout yang digunakan untuk postingan
+      permalink: "/:title/"  # Struktur permalink untuk postingan
+
+#=================================[=]  Plugins yang digunakan  
+plugins:  # Daftar plugin yang digunakan dalam proyek
+  - jekyll-feed  # Plugin untuk membuat RSS feed
+  - jekyll-seo-tag  # Plugin untuk SEO
+  - jekyll-paginate  # Plugin untuk paginasi
+  - jekyll-toc  # Plugin untuk membuat tabel isi
+
+#=================================[=]  Exclude atau Ignore 
+exclude:  # Daftar file dan direktori yang diabaikan dalam proses build
+  - Gemfile  # File Gemfile tidak perlu disertakan
+  - Gemfile.lock  # File lock gem tidak perlu disertakan
+  - node_modules  # Folder node_modules diabaikan
+  - vendor  # Folder vendor diabaikan
+  - drafts  # Folder drafts diabaikan dari build
+  - .sass-cache/
+  - .jekyll-cache/

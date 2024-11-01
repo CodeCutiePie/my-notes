@@ -1,0 +1,27 @@
+---
+layout: main
+title: Welcome
+---
+<h1 class="header-title">Welcome to {{ site.title }}</h1>  <!-- Judul selamat datang -->
+<p>Your one-stop destination for knowledge, articles, and resources on various topics.</p>  <!-- Deskripsi singkat -->
+
+<h2>Recent Articles</h2>  <!-- Judul untuk artikel terbaru -->
+<ul>  <!-- Daftar artikel -->
+  {% for post in paginator.posts %}
+    <li>  <!-- Elemen untuk setiap artikel -->
+      <a href="{{ post.url | relative_url }}" class="article-link" aria-label="Read '{{ post.title }}'">{{ post.title }}</a>  <!-- Tautan ke artikel -->
+      <p>{{ post.excerpt | truncatewords: 10 }}</p>  <!-- Cuplikan artikel -->
+      <p>{{ post.date | date: "%d %B %Y" }}</p>  <!-- Menampilkan tanggal -->
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="pagination" style="text-align: center; padding: 2rem;">  <!-- Bagian navigasi halaman -->
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="button" aria-label="Go to the previous page">Sebelumnya</a>  <!-- Tautan ke halaman sebelumnya -->
+    {% endif %}
+    <span>Halaman {{ paginator.page }} dari {{ paginator.total_pages }}</span>  <!-- Menampilkan informasi halaman -->
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="button" aria-label="Go to the next page">Selanjutnya</a>  <!-- Tautan ke halaman selanjutnya -->
+    {% endif %}
+</div>

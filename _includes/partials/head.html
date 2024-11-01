@@ -5,10 +5,21 @@
     <meta name="keywords" content="{{ page.keywords | default: 'kata kunci default' }}">
     <title>{{ page.title | default: 'Judul Halaman' }} - {{ site.title }}</title>
 
-    <!-- Favicon Links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}">
+    <!-- Favicon Standar -->
+    <link rel="icon" href="{{ '/assets/images/favicons/favicon.ico' | relative_url }}" type="image/x-icon">
+    
+    <!-- Favicon untuk Browser Desktop -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
+    
+    <!-- Ikon untuk Apple Touch (iOS dan Safari) -->
+    <link rel="apple-touch-icon" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}">
+    
+    <!-- Ikon untuk Android (Chrome pada Android) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/images/favicons/android-chrome-192x192.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/images/favicons/android-chrome-512x512.png' | relative_url }}">
+    
+    <!-- Web App Manifest untuk Progressive Web Apps (PWA) -->
     <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
 
     <!-- Css -->

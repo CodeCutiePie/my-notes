@@ -1,0 +1,16 @@
+<aside class="left-side-flex">
+    <div class="left-side-logo">
+        <img src="#" alt="Logo">
+    </div>
+    <nav class="left-side-nav">
+        <h2>Main Menu</h2>
+        <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/recent-changes.html' | relative_url }}">Recent Changes</a></li>
+            <li><a href="{{ '/random-pages.html' | relative_url }}">Random Page</a></li>
+            <li><a href="{{ '/archives.html' | relative_url }}">Archives</a></li>
+        </ul>
+        <h2>Category Topics</h2>
+        {% include categories.html %}
+    </nav>
+</aside>

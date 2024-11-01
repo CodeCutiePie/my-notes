@@ -1,69 +1,20 @@
 ---
 layout: default
 ---
-<!DOCTYPE html>
-<html lang="in">
-<head>
-    {% include partials/head.html %}
-    <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header-grid">
-            <header class="header-flex">
-                <h1>Title</h1>
-                <nav class="header-nav">
-                    <ul>
-                        <li><a href="#">Read</a></li>
-                        <li><a href="#">Source</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Text Editor</a></li>
-                    </ul>
-                </nav>
-                <nav class="header-link">
-                    <ul>
-                        <li><a href="#">Github</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Discord</a></li>
-                    </ul>
-                </nav>
-                <div class="header-search-bar">
-                    <input type="text" placeholder="Search...">
-                </div>
-            </header>
-        </div>
-        <div class="left-side-grid">
-            <aside class="left-side-flex">
-                <div class="left-side-logo">
-                    <img src="#" alt="Logo">
-                </div>
-                <nav class="left-side-nav">
-                    <h2>Main Menu</h2>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Recent Changes</a></li>
-                        <li><a href="#">Random Page</a></li>
-                        <li><a href="#">Archives</a></li>
-                    </ul>
-                    <h2>Category Topics</h2>
-                    {% include categories.html %}
-                </nav>
-            </aside>
-        </div>
-        <div class="main-grid">
-            <main class="main-flex">
-                <article class="main-content">
-                    {{ content }}
-                </article>
-            </main>
-        </div>
-        <div class="right-side-grid">
-            {% include toc.html html=content %}
-        </div>
-        <div class="footer-grid">
-            {% include footer %}
-        </div>
+<div class="container">
+    <div class="header-grid">
+        {% include partials/header.html %}
     </div>
-</body>
-</html>
+    <div class="left-side-grid">
+        {% include partials/left-side.html %}
+    </div>
+    <div class="main-grid">
+        {% include partials/main.html%}
+    </div>
+    <div class="right-side-grid">
+        {% include toc.html html=content %}
+    </div>
+    <div class="footer-grid">
+        {% include partials/footer.html %}
+    </div>
+</div>
