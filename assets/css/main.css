@@ -1,0 +1,97 @@
+/*=======================[>] Reset CSS dasar */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1px;
+}
+
+/*=======================[>] Kontainer utama */
+.container {
+    width: 100%;
+    display: grid;
+    grid:
+        "left-side-grid header-grid header-grid" auto
+        "left-side-grid main-grid right-side-grid" 1fr
+        "left-side-grid footer-grid footer-grid" auto
+        / auto 1fr auto; /* Menentukan lebar kolom */
+    gap: 8px; /* Jarak antar elemen grid */
+    height: 100vh; /* Mengisi seluruh tinggi layar */
+}
+
+/*=======================[>] Area Grid */
+.header-grid {
+    grid-area: header-grid; /* Menetapkan area grid untuk header */
+}
+
+.left-side-grid {
+    grid-area: left-side-grid; /* Menetapkan area grid untuk sidebar kiri */
+    background-color: #B03A2E; /* Ganti dengan warna sesuai palet */
+    color: #FFFFFF; /* Warna teks */
+    padding: 10px;
+}
+
+.main-grid {
+    grid-area: main-grid; /* Menetapkan area grid untuk konten utama */
+    background-color: #FFFFFF; /* Warna latar belakang konten utama */
+    color: #000000; /* Warna teks */
+    padding: 10px;
+}
+
+.right-side-grid {
+    grid-area: right-side-grid; /* Menetapkan area grid untuk sidebar kanan */
+    background-color: #F1C40F; /* Ganti dengan warna sesuai palet */
+    padding: 10px;
+}
+
+.footer-grid {
+    grid-area: footer-grid; /* Menetapkan area grid untuk footer */
+    background-color: #001F3F; /* Ganti dengan warna sesuai palet */
+    color: #FFFFFF; /* Warna teks */
+    padding: 10px;
+}
+
+/*=======================[>] Header */
+.header-grid {
+    display: flex; /* Menggunakan flexbox untuk menyusun item di dalam header */
+    justify-content: space-between; /* Menyebar item secara merata */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    padding: 10px;
+}
+
+/* Navigasi dalam header */
+.header-nav,
+.header-link {
+    display: flex; /* Menyusun navigasi secara horizontal */
+}
+
+.header-nav ul,
+.header-link ul {
+    list-style: none; /* Menghilangkan bullet */
+}
+
+/* Search Bar */
+.header-search-bar {
+    flex: 1; /* Membuat kolom pencarian menggunakan ruang yang tersisa */
+    margin: 0 10px;
+}
+
+.header-search-bar input {
+    width: 100%; /* Mengisi lebar penuh */
+    padding: 5px;
+}
+
+/*=======================[>] Sidebar Kiri */
+.left-side-nav h2 {
+    margin-bottom: 5px; /* Jarak bawah pada judul */
+}
+
+.left-side-nav ul {
+    list-style: none; /* Menghilangkan bullet */
+    margin-bottom: 10px; /* Jarak bawah antar kategori */
+}
+
+/*=======================[>] Konten Utama */
+.main-content {
+    /* Mungkin bisa ditambahkan style untuk konten utama */
+}
