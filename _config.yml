@@ -66,3 +66,9 @@ exclude:  # Daftar file dan direktori yang diabaikan dalam proses build
   - drafts  # Folder drafts diabaikan dari build
   - .sass-cache/
   - .jekyll-cache/
+
+
+github:
+  repository_url: https://github.com/masputrawae/my-notes
+  site_root: /
+git_branch: "master"

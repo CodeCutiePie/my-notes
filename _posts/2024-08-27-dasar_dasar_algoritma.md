@@ -13,15 +13,11 @@ tags:
   - Belajar
 excerpt: Pengantar sederhana untuk memahami konsep dasar algoritma, termasuk contoh dan tips belajar yang bermanfaat bagi pemula.
 status: published
-thumbnail: /assets/images/algorithms-basics-thumbnail.png
 post: true
 description: Pengantar sederhana untuk memahami konsep dasar algoritma.
 keywords: Algoritma, Dasar, Pemrograman, Belajar
 author: Putra Jaya
-author_url: https://example.com/author/putra-jaya
 last_modified_at: 2024-10-31
-reading_time: 5 minutes
-source: https://example.com/source
 ---
 
 # Memahami Dasar-Dasar Algoritma untuk Pemula
