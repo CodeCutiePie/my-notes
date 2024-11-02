@@ -153,29 +153,7 @@ input[type="submit"]:hover {
 footer p{
     text-align: center;
 }
-/*=======================[>] Styling Details */
-details {
-    border: 1px solid #2e75b0; /* Border merah marun untuk elemen details */
-    border-radius: 5px; /* Sudut halus */
-    padding: 10px; /* Padding di dalam elemen details */
-    margin: 10px 0; /* Margin atas dan bawah */
-    background-color: #F9F9F9; /* Warna latar belakang yang lembut */
-    cursor: pointer; /* Menampilkan pointer saat hover */
-    transition: background-color 0.3s ease; /* Transisi latar belakang */
-}
 
-/* Styling Summary */
-summary {
-    font-weight: bold; /* Membuat teks summary lebih tebal */
-    color: #001F3F; /* Warna navy untuk teks summary */
-    list-style: none; /* Menghapus bullet default pada summary */
-    padding: 5px; /* Padding di dalam summary */
-}
-
-/* Hover Effect pada Details */
-details:hover {
-    background-color: #E8E8E8; /* Warna latar belakang lebih gelap saat hover */
-}
 /*=======================[>] Markdown Editor */
 .markdown-editor {
     max-width: 800px; /* Lebar maksimum untuk editor */
@@ -231,4 +209,27 @@ details:hover {
 
 .markdown-editor .editor-button:hover {
     background-color: #0084ff; /* Warna tombol saat hover */
+}
+/*=======================[>] Styling Details */
+details {
+    border: 1px solid #2e75b0; /* Border merah marun untuk elemen details */
+    border-radius: 5px; /* Sudut halus */
+    padding: 10px; /* Padding di dalam elemen details */
+    margin: 10px 0; /* Margin atas dan bawah */
+    background-color: #F9F9F9; /* Warna latar belakang yang lembut */
+    cursor: pointer; /* Menampilkan pointer saat hover */
+    transition: background-color 0.3s ease; /* Transisi latar belakang */
+}
+
+/* Styling Summary */
+summary {
+    font-weight: bold; /* Membuat teks summary lebih tebal */
+    color: #001F3F; /* Warna navy untuk teks summary */
+    list-style: none; /* Menghapus bullet default pada summary */
+    padding: 5px; /* Padding di dalam summary */
+}
+
+/* Hover Effect pada Details */
+details:hover {
+    background-color: #E8E8E8; /* Warna latar belakang lebih gelap saat hover */
 }
